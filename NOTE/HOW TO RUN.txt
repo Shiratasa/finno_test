@@ -1,0 +1,12 @@
+{backend}
+* cd D:
+* cd new_folder
+* npm start
+
+------------------------------------------------------------------------------------------------
+
+{frontend}
+* cd D:
+* cd new_folder
+* cd frontend
+* npm start

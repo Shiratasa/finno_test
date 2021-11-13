@@ -1,0 +1,25 @@
+{
+  "name": "finno_test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This website project has been developed by Putthiwat Chalermvongsavej.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shiratasa/finno_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shiratasa/finno_test/issues"
+  },
+  "homepage": "https://github.com/Shiratasa/finno_test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

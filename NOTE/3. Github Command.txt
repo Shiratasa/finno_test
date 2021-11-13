@@ -1,0 +1,12 @@
+cd D:
+cd new_folder
+
+git remote add origin https://github.com/Shiratasa/new_repo.git
+git branch -M main
+
+git add .
+git add -u
+git commit -m "Commend"
+
+git push -u origin main
+{OR 'git push origin master'}

@@ -1,0 +1,22 @@
+cd D:
+cd new_folder
+npm init -y
+npm install -g nodemon
+npm install express
+
+------------------------------------------------------------------------------------------------
+
+{Add this section in 'package.json'}
+* "type": "module"
+
+------------------------------------------------------------------------------------------------
+
+{Add this line to 'scripts' section in 'package.json'}
+* "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+
+------------------------------------------------------------------------------------------------
+
+{Create the following file in 'backend' folder}
+* server.js
+
+------------------------------------------------------------------------------------------------

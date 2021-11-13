@@ -1,0 +1,21 @@
+cd D:
+npx create-react-app new_folder
+cd new_folder
+npm install react-scripts@latest
+npm start
+
+------------------------------------------------------------------------------------------------
+
+{Move the following files to 'frontend' folder}
+* node_modules folder
+* public folder
+* src folder
+* package.json
+* package-lock.json
+
+------------------------------------------------------------------------------------------------
+
+{Create the following file in 'src' folder}
+* pages folder
+
+------------------------------------------------------------------------------------------------
