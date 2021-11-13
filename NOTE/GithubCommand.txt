@@ -1,0 +1,11 @@
+cd D:
+cd new_folder
+
+git remote add origin https://github.com/Shiratasa/finno_test.git
+git branch -M main
+git push -u origin main
+
+git add .
+git add -u
+git commit -m "Commend"
+git push origin master

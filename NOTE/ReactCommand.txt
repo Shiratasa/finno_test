@@ -1,0 +1,5 @@
+cd D:
+npx create-react-app new_folder
+cd new_folder
+npm install react-scripts@latest
+npm start
