@@ -19,3 +19,6 @@ npm start
 * pages folder
 
 ------------------------------------------------------------------------------------------------
+
+{Create the following files in 'public' folder}
+* resources folder

@@ -18,5 +18,3 @@ npm install express
 
 {Create the following file in 'backend' folder}
 * server.js
-
-------------------------------------------------------------------------------------------------
