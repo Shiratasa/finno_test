@@ -124,7 +124,7 @@ function Main_Page() {
                 return (
                   <tbody>
                     <tr class="row100 body">
-                      <td class="cell100 column1">nav_return_rank</td>
+                      <td class="cell100 column1">{(key+1)+((Current_Page1-1)*7)}</td>
                       <td class="cell100 column2">{val.thailand_fund_code}</td>
                       <td class="cell100 column3">{val.nav_date}</td>
                       <td class="cell100 column4">{val.nav_return}</td>
