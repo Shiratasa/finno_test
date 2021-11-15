@@ -28,6 +28,16 @@ window.onpopstate = function () {
 };
 
 function Main_Page() {
+  const [Fund_Detail, setFund_Detail] = useState([]);
+  const FundBlock = async () => {
+    const { data } = await Axios.get("/api/funds");
+    setFund_Detail(data);
+  };
+
+  window.onload = function () {
+    FundBlock();
+  };
+
   return (
     <div className="App">
       <Helmet>
@@ -89,8 +99,8 @@ function Main_Page() {
             <table>
               <thead>
                 <tr class="row100 head">
-                  <th class="cell100 column1">Name</th>
-                  <th class="cell100 column2">Rank of fund</th>
+                  <th class="cell100 column1">Rank of fund</th>
+                  <th class="cell100 column2">Name</th>
                   <th class="cell100 column3">Updated date</th>
                   <th class="cell100 column4">Performance</th>
                   <th class="cell100 column5">Price</th>
@@ -101,15 +111,19 @@ function Main_Page() {
 
           <div class="table100-body js-pscroll">
             <table>
-              <tbody>
-                <tr class="row100 body">
-                  <td class="cell100 column1">thailand_fund_code</td>
-                  <td class="cell100 column2">nav_return_rank</td>
-                  <td class="cell100 column3">nav_date</td>
-                  <td class="cell100 column4">nav_return</td>
-                  <td class="cell100 column5">nav</td>
-                </tr>
-              </tbody>
+              {Fund_Detail.map((val, key) => {
+                return (
+                  <tbody>
+                    <tr class="row100 body">
+                      <td class="cell100 column1">nav_return_rank</td>
+                      <td class="cell100 column2">{val.thailand_fund_code}</td>
+                      <td class="cell100 column3">{val.nav_date}</td>
+                      <td class="cell100 column4">{val.nav_return}</td>
+                      <td class="cell100 column5">{val.nav}</td>
+                    </tr>
+                  </tbody>
+                );
+              })}
             </table>
           </div>
         </div>
