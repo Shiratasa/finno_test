@@ -8,7 +8,7 @@ import Axios from "axios";
 import Pagination from "./Pagination.js";
 import $ from "jquery";
 import JSAlert from "js-alert";
-//react-router-dom@5.0.0
+
 import {
   BrowserRouter as Router,
   Route,
@@ -31,7 +31,7 @@ function Main_Page() {
   return (
     <div className="App">
       <Helmet>
-        <title>Putthiwat's Finnomena Test</title>
+        <title>Putthiwat's Finnomena</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -80,33 +80,38 @@ function Main_Page() {
         <script src="js/main.js" />
       </Helmet>
 
-      <div class="table100 ver1 m-b-110">
-        <div class="table100-head">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">Name</th>
-                <th class="cell100 column2">Rank of fund</th>
-                <th class="cell100 column3">Updated date</th>
-                <th class="cell100 column4">Performance</th>
-                <th class="cell100 column5">Price</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+      <div class="container spacer">
+        <br />
+        <br />
+        <br />
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">Name</th>
+                  <th class="cell100 column2">Rank of fund</th>
+                  <th class="cell100 column3">Updated date</th>
+                  <th class="cell100 column4">Performance</th>
+                  <th class="cell100 column5">Price</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
 
-        <div class="table100-body js-pscroll">
-          <table>
-            <tbody>
-              <tr class="row100 body">
-                <td class="cell100 column1">thailand_fund_code</td>
-                <td class="cell100 column2">nav_return_rank</td>
-                <td class="cell100 column3">nav_date</td>
-                <td class="cell100 column4">nav_return</td>
-                <td class="cell100 column5">nav</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody>
+                <tr class="row100 body">
+                  <td class="cell100 column1">thailand_fund_code</td>
+                  <td class="cell100 column2">nav_return_rank</td>
+                  <td class="cell100 column3">nav_date</td>
+                  <td class="cell100 column4">nav_return</td>
+                  <td class="cell100 column5">nav</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

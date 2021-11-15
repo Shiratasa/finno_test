@@ -3,7 +3,7 @@ import React, { Component, useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Helmet } from "react-helmet";
-//react-router-dom@5.0.0
+
 import {
   BrowserRouter as Router,
   Route,

@@ -6,7 +6,7 @@ export const Pagination = ({
   TotalPost,
   Current_Page,
   paginate,
-  PostCount,
+  PostCount
 }) => {
   const pageNum = [];
   const [Page_Limit, setPage_Limit] = useState(7);
