@@ -9,9 +9,9 @@ export const Pagination = ({
   PostCount
 }) => {
   const pageNum = [];
-  const [Page_Limit, setPage_Limit] = useState(7);
+  const [Page_Limit, setPage_Limit] = useState(5);
   const [minPage_Limit, setminPage_Limit] = useState(0);
-  const [maxPage_Limit, setmaxPage_Limit] = useState(7);
+  const [maxPage_Limit, setmaxPage_Limit] = useState(5);
 
   function prevClick() {
     if (Current_Page > 1) {
@@ -39,14 +39,13 @@ export const Pagination = ({
   if (Current_Page > 1) {
     DecreTab = (
       <div className="col-sm-1">
-        <li id="prev">
-          <a
-            onClick={() => {
-              prevClick();
-            }}
-          >
-            «
-          </a>
+        <li
+          id="prev"
+          onClick={() => {
+            prevClick();
+          }}
+        >
+          <a>«</a>
         </li>
       </div>
     );
@@ -56,14 +55,13 @@ export const Pagination = ({
   if (Current_Page < PostCount) {
     IncreTab = (
       <div className="col-sm-1">
-        <li id="next">
-          <a
-            onClick={() => {
-              nextClick();
-            }}
-          >
-            »
-          </a>
+        <li
+          id="next"
+          onClick={() => {
+            nextClick();
+          }}
+        >
+          <a>»</a>
         </li>
       </div>
     );
@@ -84,9 +82,12 @@ export const Pagination = ({
                 <li
                   key={number}
                   id={number}
-                  className={Current_Page === number ? "active" : ""}
+                  className={
+                    Current_Page === number ? "active" : ""
+                  }
+                  onClick={() => paginate(number)}
                 >
-                  <a onClick={() => paginate(number)}>{number}</a>
+                  <a>{number}</a>
                 </li>
               </div>
             );

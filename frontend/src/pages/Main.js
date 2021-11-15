@@ -34,6 +34,14 @@ function Main_Page() {
     setFund_Detail(data);
   };
 
+  const [Current_Page1, setCurrent_Page1] = useState(1);
+  const [Page_AllPost1, setPage_AllPost1] = useState(7);
+  const LastQuery1 = Current_Page1 * Page_AllPost1;
+  const FirstQuery1 = LastQuery1 - Page_AllPost1;
+  const FundSlice = Fund_Detail.slice(FirstQuery1, LastQuery1);
+  const FundCount = Math.ceil(Fund_Detail.length / Page_AllPost1);
+  const paginate1 = (pageNum) => setCurrent_Page1(pageNum);
+
   window.onload = function () {
     FundBlock();
   };
@@ -90,11 +98,10 @@ function Main_Page() {
         <script src="js/main.js" />
       </Helmet>
 
-      <div class="container spacer">
+      <div class="container">
         <br />
         <br />
-        <br />
-        <div class="table100 ver1 m-b-110">
+        <div class="table100 ver1">
           <div class="table100-head">
             <table>
               <thead>
@@ -111,7 +118,9 @@ function Main_Page() {
 
           <div class="table100-body js-pscroll">
             <table>
-              {Fund_Detail.map((val, key) => {
+              {FundSlice.sort((a, b) =>
+                a.nav_return < b.nav_return ? 1 : -1
+              ).map((val, key) => {
                 return (
                   <tbody>
                     <tr class="row100 body">
@@ -127,6 +136,17 @@ function Main_Page() {
             </table>
           </div>
         </div>
+
+        <br />
+        <Pagination
+          Page_AllPost={Page_AllPost1}
+          TotalPost={Fund_Detail.length}
+          Current_Page={Current_Page1}
+          paginate={paginate1}
+          PostCount={FundCount}
+        />
+        <br />
+        <br />
       </div>
     </div>
   );
