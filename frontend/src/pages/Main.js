@@ -27,6 +27,8 @@ window.onpopstate = function () {
 };
 
 function Main_Page() {
+  const [fromDate, setfromDate] = useState("");
+  const [toDate, settoDate] = useState("");
   const [Fund_Detail, setFund_Detail] = useState([]);
   const FundBlock = async () => {
     const { data } = await Axios.get("/api/funds");
@@ -94,11 +96,23 @@ function Main_Page() {
         <br />
         <div class="topleft">
           <label for="fromD">From:</label>
-          <input type="date" id="fromD" name="fromD" />
+          <input
+            type="date"
+            id="fromD"
+            onChange={(s) => {
+              setfromDate(s.target.value);
+            }}
+          />
         </div>
         <div class="topright">
           <label for="toD">To:</label>
-          <input type="date" id="toD" name="toD" />
+          <input
+            type="date"
+            id="toD"
+            onChange={(s) => {
+              settoDate(s.target.value);
+            }}
+          />
         </div>
         <br />
         <br />
@@ -119,47 +133,69 @@ function Main_Page() {
 
           <div class="table100-body js-pscroll">
             <table>
-              {Fund_Detail.sort((a, b) =>
-                a.nav_return < b.nav_return ? 1 : -1
-              ).map((val, key) => {
-                let color = key % 2 === 0 ? "white" : "#f8f6ff";
-                return (
-                  <tbody>
-                    <tr class="row100 body">
-                      <td
-                        style={{ backgroundColor: color }}
-                        class="cell100 column1"
-                      >
-                        {key + 1}
-                      </td>
-                      <td
-                        style={{ backgroundColor: color }}
-                        class="cell100 column2"
-                      >
-                        {val.thailand_fund_code}
-                      </td>
-                      <td
-                        style={{ backgroundColor: color }}
-                        class="cell100 column3"
-                      >
-                        {val.nav_date}
-                      </td>
-                      <td
-                        style={{ backgroundColor: color }}
-                        class="cell100 column4"
-                      >
-                        {val.nav_return}
-                      </td>
-                      <td
-                        style={{ backgroundColor: color }}
-                        class="cell100 column5"
-                      >
-                        {val.nav}
-                      </td>
-                    </tr>
-                  </tbody>
-                );
-              })}
+              {Fund_Detail.filter((val) => {
+                if (fromDate == "" && toDate == "") {
+                  return val;
+                }
+                if (
+                  (new Date(val.nav_date)).getTime() >= (new Date(fromDate)).getTime() &&
+                  toDate == ""
+                ) {
+                  return val;
+                }
+                if (
+                  fromDate == "" &&
+                  (new Date(val.nav_date)).getTime() <= (new Date(toDate)).getTime()
+                ) {
+                  return val;
+                }
+                if (
+                  (new Date(val.nav_date)).getTime() >= (new Date(fromDate)).getTime() &&
+                  (new Date(val.nav_date)).getTime() <= (new Date(toDate)).getTime()
+                ) {
+                  return val;
+                }
+              })
+                .sort((a, b) => (a.nav_return < b.nav_return ? 1 : -1))
+                .map((val, key) => {
+                  let color = key % 2 === 0 ? "white" : "#f8f6ff";
+                  return (
+                    <tbody>
+                      <tr class="row100 body">
+                        <td
+                          style={{ backgroundColor: color }}
+                          class="cell100 column1"
+                        >
+                          {key + 1}
+                        </td>
+                        <td
+                          style={{ backgroundColor: color }}
+                          class="cell100 column2"
+                        >
+                          {val.thailand_fund_code}
+                        </td>
+                        <td
+                          style={{ backgroundColor: color }}
+                          class="cell100 column3"
+                        >
+                          {val.nav_date}
+                        </td>
+                        <td
+                          style={{ backgroundColor: color }}
+                          class="cell100 column4"
+                        >
+                          {val.nav_return}
+                        </td>
+                        <td
+                          style={{ backgroundColor: color }}
+                          class="cell100 column5"
+                        >
+                          {val.nav}
+                        </td>
+                      </tr>
+                    </tbody>
+                  );
+                })}
             </table>
           </div>
         </div>
