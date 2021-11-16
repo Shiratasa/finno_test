@@ -92,6 +92,16 @@ function Main_Page() {
       <div class="container">
         <br />
         <br />
+        <div class="topleft">
+          <label for="fromD">From:</label>
+          <input type="date" id="fromD" name="fromD" />
+        </div>
+        <div class="topright">
+          <label for="toD">To:</label>
+          <input type="date" id="toD" name="toD" />
+        </div>
+        <br />
+        <br />
         <div class="table100 ver1">
           <div class="table100-head">
             <table>
@@ -112,15 +122,40 @@ function Main_Page() {
               {Fund_Detail.sort((a, b) =>
                 a.nav_return < b.nav_return ? 1 : -1
               ).map((val, key) => {
-                let color = key%2 ===0 ? "white": "#f8f6ff";
+                let color = key % 2 === 0 ? "white" : "#f8f6ff";
                 return (
                   <tbody>
                     <tr class="row100 body">
-                      <td style={{backgroundColor: color}} class="cell100 column1">{key + 1}</td>
-                      <td style={{backgroundColor: color}} class="cell100 column2">{val.thailand_fund_code}</td>
-                      <td style={{backgroundColor: color}} class="cell100 column3">{val.nav_date}</td>
-                      <td style={{backgroundColor: color}} class="cell100 column4">{val.nav_return}</td>
-                      <td style={{backgroundColor: color}} class="cell100 column5">{val.nav}</td>
+                      <td
+                        style={{ backgroundColor: color }}
+                        class="cell100 column1"
+                      >
+                        {key + 1}
+                      </td>
+                      <td
+                        style={{ backgroundColor: color }}
+                        class="cell100 column2"
+                      >
+                        {val.thailand_fund_code}
+                      </td>
+                      <td
+                        style={{ backgroundColor: color }}
+                        class="cell100 column3"
+                      >
+                        {val.nav_date}
+                      </td>
+                      <td
+                        style={{ backgroundColor: color }}
+                        class="cell100 column4"
+                      >
+                        {val.nav_return}
+                      </td>
+                      <td
+                        style={{ backgroundColor: color }}
+                        class="cell100 column5"
+                      >
+                        {val.nav}
+                      </td>
                     </tr>
                   </tbody>
                 );

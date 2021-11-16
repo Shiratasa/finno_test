@@ -1,3 +1,21 @@
+.topleft {
+  font-family: Algerian;
+  font-size: 16px;
+  color: red;
+  position: absolute;
+  top: 20px;
+  left: 300px;
+}
+
+.topright {
+  font-family: Algerian;
+  font-size: 16px;
+  color: green;
+  position: absolute;
+  top: 20px;
+  right: 300px;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
