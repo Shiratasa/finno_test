@@ -2,7 +2,9 @@ cd D:
 cd new_folder
 npm init -y
 npm install --save-dev nodemon
+npm install pm2@latest -g
 npm install express
+pm2 init
 
 ------------------------------------------------------------------------------------------------
 
@@ -13,8 +15,11 @@ npm install express
 
 {Add this line to 'scripts' section in 'package.json'}
 * "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+OR
+* "start": "pm2-runtime start backend/ecosystem.config.js --env production"
 
 ------------------------------------------------------------------------------------------------
 
-{Create the following file in 'backend' folder}
+{Move the following files to 'backend' folder}
+* ecosystem.config.js
 * server.js
