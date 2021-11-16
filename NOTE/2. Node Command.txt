@@ -23,3 +23,6 @@ OR
 {Move the following files to 'backend' folder}
 * ecosystem.config.js
 * server.js
+* package.json
+* package-lock.json
+* .gitignore.txt

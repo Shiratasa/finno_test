@@ -14,6 +14,7 @@ npm start
 * src folder
 * package.json
 * package-lock.json
+* .gitignore.txt
 
 ------------------------------------------------------------------------------------------------
 
