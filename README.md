@@ -22,4 +22,4 @@ This website project has been developed by Putthiwat Chalermvongsavej ---> putth
    - The current version of API is already optimized.
 ```
 
-![](https://github.com/Shiratasa/finno_test/blob/master/NOTE/Untitled.png?raw=true)
+![](https://github.com/Shiratasa/finno_test/blob/main/NOTE/Untitled.png?raw=true)
