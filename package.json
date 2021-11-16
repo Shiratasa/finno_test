@@ -5,8 +5,8 @@
   "description": "This website project has been developed by Putthiwat Chalermvongsavej.",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start server.js",
-    "devStart": "pm2 start server.js",
+    "start": "node backend/server.js",
+    "devStart": "pm2 start backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
