@@ -16,7 +16,7 @@ This website project has been developed by Putthiwat Chalermvongsavej ---> putth
  
 ## How would you track down a performance issue in production? 
    Have you ever had to do this?
-   - Using "Pipe" can solve this issue, however, never once faced this issue.
+   - Using "PM2" can solve this issue, however, never once faced this issue.
  
 ## How would you improve the FINNOMENA APIs that you just used?
    - The current version of API is already optimized.
