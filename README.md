@@ -1,4 +1,19 @@
 # FINNOMENA Engineer Recruitment Test
-This website project has been developed by Putthiwat Chalermvongsavej.
-
-Contact the developer? ---> putthiwat.kmutt@gmail.com
+ 
+This website project has been developed by Putthiwat Chalermvongsavej ---> putthiwat.kmutt@gmail.com
+ 
+## Technical Questions
+```
+## How long did you spend on the coding test? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
+- Using 30 minutes to test the structure code, 45 minutes to test the template code, and 60 minutes to test the data sorting function. Nothing more to be added.
+ 
+## What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
+- Filter, Sort, and Map.
+![](https://github.com/Shiratasa/finno_test/blob/master/NOTE/untitled.png?raw=true)
+ 
+## How would you track down a performance issue in production? Have you ever had to do this?
+- Never have any problem about the performance issue.
+ 
+## How would you improve the FINNOMENA APIs that you just used?
+- The current version of API is already optimized.
+```
