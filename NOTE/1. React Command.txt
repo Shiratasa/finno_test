@@ -3,6 +3,7 @@ npx create-react-app new_folder
 cd new_folder
 npm install react-scripts@latest
 npm install react-router-dom@5.0.0
+npm install --save-dev gh-pages
 npm start
 
 ------------------------------------------------------------------------------------------------

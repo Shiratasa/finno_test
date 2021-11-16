@@ -1,7 +1,7 @@
 cd D:
 cd new_folder
 npm init -y
-npm install -g nodemon
+npm install --save-dev nodemon
 npm install express
 
 ------------------------------------------------------------------------------------------------

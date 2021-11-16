@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Shiratasa/finno_test#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
