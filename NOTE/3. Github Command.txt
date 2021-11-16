@@ -8,5 +8,7 @@ git add .
 git add -u
 git commit -m "Commend"
 
+npm run deploy
+
 git push -u origin main
 {OR 'git push origin master'}
