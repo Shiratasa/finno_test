@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import { Helmet } from "react-helmet";
 import InnerHTML from "dangerously-set-html-content";
 import Axios from "axios";
-import Pagination from "./Pagination.js";
 import $ from "jquery";
 import JSAlert from "js-alert";
 
@@ -33,14 +32,6 @@ function Main_Page() {
     const { data } = await Axios.get("/api/funds");
     setFund_Detail(data);
   };
-
-  const [Current_Page1, setCurrent_Page1] = useState(1);
-  const [Page_AllPost1, setPage_AllPost1] = useState(7);
-  const LastQuery1 = Current_Page1 * Page_AllPost1;
-  const FirstQuery1 = LastQuery1 - Page_AllPost1;
-  const FundSlice = Fund_Detail.slice(FirstQuery1, LastQuery1);
-  const FundCount = Math.ceil(Fund_Detail.length / Page_AllPost1);
-  const paginate1 = (pageNum) => setCurrent_Page1(pageNum);
 
   window.onload = function () {
     FundBlock();
@@ -118,17 +109,18 @@ function Main_Page() {
 
           <div class="table100-body js-pscroll">
             <table>
-              {FundSlice.sort((a, b) =>
+              {Fund_Detail.sort((a, b) =>
                 a.nav_return < b.nav_return ? 1 : -1
               ).map((val, key) => {
+                let color = key%2 ===0 ? "white": "#f8f6ff";
                 return (
                   <tbody>
                     <tr class="row100 body">
-                      <td class="cell100 column1">{(key+1)+((Current_Page1-1)*7)}</td>
-                      <td class="cell100 column2">{val.thailand_fund_code}</td>
-                      <td class="cell100 column3">{val.nav_date}</td>
-                      <td class="cell100 column4">{val.nav_return}</td>
-                      <td class="cell100 column5">{val.nav}</td>
+                      <td style={{backgroundColor: color}} class="cell100 column1">{key + 1}</td>
+                      <td style={{backgroundColor: color}} class="cell100 column2">{val.thailand_fund_code}</td>
+                      <td style={{backgroundColor: color}} class="cell100 column3">{val.nav_date}</td>
+                      <td style={{backgroundColor: color}} class="cell100 column4">{val.nav_return}</td>
+                      <td style={{backgroundColor: color}} class="cell100 column5">{val.nav}</td>
                     </tr>
                   </tbody>
                 );
@@ -136,15 +128,6 @@ function Main_Page() {
             </table>
           </div>
         </div>
-
-        <br />
-        <Pagination
-          Page_AllPost={Page_AllPost1}
-          TotalPost={Fund_Detail.length}
-          Current_Page={Current_Page1}
-          paginate={paginate1}
-          PostCount={FundCount}
-        />
         <br />
         <br />
       </div>
