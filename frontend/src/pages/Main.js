@@ -31,7 +31,7 @@ function Main_Page() {
   const [toDate, settoDate] = useState("");
   const [Fund_Detail, setFund_Detail] = useState([]);
   const FundBlock = async () => {
-    const { data } = await Axios.get("/api/funds");
+    const { data } = await Axios.get("https://putthiwat-finnomena.herokuapp.com/api/funds");
     setFund_Detail(data);
   };
 
@@ -79,10 +79,6 @@ function Main_Page() {
         <link rel="stylesheet" type="text/css" href="resources/css/util.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
 
-        <script
-          async="true"
-          src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        />
         <script src="vendor/jquery/jquery-3.2.1.min.js" />
         <script src="vendor/bootstrap/js/popper.js" />
         <script src="vendor/bootstrap/js/bootstrap.min.js" />
